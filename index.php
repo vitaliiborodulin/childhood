@@ -7,14 +7,10 @@
                     <?php 
 
                     $posts = get_posts( array(
-                        'numberposts' => -1,
+                        'numberposts' => -1,//убрать ограничения вывода
                         'category_name'    => 'slider',
                         'orderby'     => 'date',
                         'order'       => 'ASC',
-                        'include'     => array(),
-                        'exclude'     => array(),
-                        'meta_key'    => '',
-                        'meta_value'  =>'',
                         'post_type'   => 'post',
                         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                     ) );
