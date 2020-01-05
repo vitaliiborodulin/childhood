@@ -25,9 +25,8 @@
                 <div class="row align-items-center">
                     <div class="col-11 col-sm-12 col-md-12 col-lg-3">
                         <a href="<?= get_home_url(); ?>" class="header__logo">
-                        <?php $custom_logo__url = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );?>
+                            <?php $custom_logo__url = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );?>
                             <img src="<?= $custom_logo__url[0] ?>" alt="Мир детства" class="header__logo-img">
-                            <!-- <div class="header__logo-text">Мир детства</div> -->
                         </a>
                     </div>
                     <div class="col-md-12 col-lg-9 offset-lg-0 col-xl-7 offset-xl-2 ">
@@ -51,23 +50,15 @@
                     </div>
                 </div>
                 <nav class="row" data-slide="1">
-                    <ul class="header__nav">
-                        <li>
-                            <a class="header__nav-item" href="#about">Про компанию</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#specialists">Наша команда</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#toys">Игрушки</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#aboutus">Наша история</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#contacts">Контакты и отзывы</a>
-                        </li>
-                    </ul>
+                    <?php wp_nav_menu( [
+                        'menu'            => 'Main', 
+                        'container'       => false,
+                        'menu_class'      => 'header__nav',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'items_wrap'      => '<ul class="header__nav">%3$s</ul>',
+                        'depth'           => 0
+                    ] ); ?>
                 </nav>
             </div>
             <div class="header__hamburger">
