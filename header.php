@@ -57,7 +57,7 @@
                         'echo'            => true,
                         'fallback_cb'     => 'wp_page_menu',
                         'items_wrap'      => '<ul class="header__nav">%3$s</ul>',
-                        'depth'           => 0
+                        'depth'           => 1
                     ] ); ?>
                 </nav>
             </div>
