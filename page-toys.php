@@ -11,7 +11,9 @@ Template Name: Игрушки
 
 <div class="toys">
     <div class="container">
-        <h2 class="subtitle">Мягкие игрушки</h2>
+        <h2 class="subtitle">
+            <a href="<?= get_category_link('3') ?>" style="text-decoration: none">Мягкие игрушки</a>
+        </h2>
         <div class="toys__wrapper">
 
             <?php 
@@ -40,7 +42,7 @@ Template Name: Игрушки
                     <div class="toys__item-descr">
                         <?php the_field('toys_descr'); ?>
                     </div>
-                    <div class="minibutton toys__trigger">Подробнее</div>
+                    <a href="<?php the_permalink(); ?>" class="minibutton toys__trigger">Подробнее</a>
                 </div>
             </div>
 
@@ -50,7 +52,9 @@ Template Name: Игрушки
         </div>
 
 
-        <h2 class="subtitle">Развивающие игрушки</h2>
+        <h2 class="subtitle">
+            <a href="<?= get_category_link('4') ?>" style="text-decoration: none">Развивающие игрушки</a>
+        </h2>
         <div class="toys__wrapper">
 
             <?php 
@@ -79,7 +83,7 @@ Template Name: Игрушки
                     <div class="toys__item-descr">
                         <?php the_field('toys_descr'); ?>
                     </div>
-                    <div class="minibutton toys__trigger">Подробнее</div>
+                    <a href="<?php the_permalink(); ?>" class="minibutton toys__trigger">Подробнее</a>
                 </div>
             </div>
 
