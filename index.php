@@ -61,7 +61,6 @@
                 <div class="row">
                     <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-1">
                         <div class="about__img">
-                            <!-- <img src="<?php the_field('about_img'); ?> " alt="про компанию"> -->
                             <?php $about_img = get_field('about_img'); ?>
                             <?php if (!empty($about_img)): ?>
                                 <img src="<?= $about_img['url'] ?>" alt="<?= $about_img['alt'] ?>">
@@ -73,7 +72,7 @@
                         <div class="about__text">
                             <?php the_field('about_text'); ?>
                         </div>
-                        <a href="#" class="button">Узнать больше</a>
+                        <a href="<?php the_permalink('100'); ?>" class="button">Узнать больше</a>
                     </div>
                 </div>
             </div>
