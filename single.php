@@ -1,0 +1,61 @@
+<?php get_header(); ?>
+
+            <div class="container toys">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <h2 class="subtitle"><?php the_title(); ?></h2>
+                    <div class="entry-content">
+                        <?php the_content(); ?>
+                    </div><!-- .entry-content -->
+                </article><!-- #post-<?php the_ID(); ?> -->
+            </div><!-- .container -->
+
+    <div class="container toys">
+        <h2 class="subtitle">Возможно Вам понравятся</h2>
+        <div class="toys__wrapper" style="justify-content: space-around">
+
+            <?php 
+                    $posts = get_posts( array(
+                        'numberposts' => 2,//убрать ограничения вывода
+                        'category_name'    => 'soft_toys',
+                        'orderby'     => 'rand',
+                        'order'       => 'ASC',
+                        'post_type'   => 'post',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    ) );
+
+                    foreach( $posts as $post ){
+                        setup_postdata($post); ?>
+
+            <div class="toys__item" style="background-image: url(<?php 
+                            if(has_post_thumbnail()) {
+                                the_post_thumbnail_url();
+                            } else {
+                                echo get_template_directory_uri() . '/assets/img/not-found.jpg';
+                            }
+                            ?>
+                        )">
+                <div class="toys__item-info">
+                    <div class="toys__item-title"><?php the_title(); ?></div>
+                    <div class="toys__item-descr">
+                        <?php the_field('toys_descr'); ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>" class="minibutton toys__trigger">Подробнее</a>
+                </div>
+            </div>
+
+            <?php }
+                        wp_reset_postdata(); ?>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="toys__alert">
+                    <span>Не нашли то, что искали?</span> Свяжитесь с нами - и мы с радостью создадим любую игрушку по
+                    вашему желанию. Вы можете выбрать все: размер, материал, формы...!
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php get_footer(); ?>
