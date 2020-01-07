@@ -69,7 +69,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <a href="#" class="footer__policy">Политика конфиденциальности</a>
+                        <a href="/privacy-policy" class="footer__policy">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>
